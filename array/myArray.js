@@ -29,6 +29,22 @@ class MyArray {
     this.length--;
     return lastItem;
   }
+
+  // This is the "delete" method that deletes an item from anywhere in the array
+  delete(index) {
+    const item = this.data[index];
+    this.shiftItems(index);
+    return lastItem;
+  }
+
+  // This is the "shift" method that moves all items over to replace the index that was deleted
+  shiftItems(index) {
+    for(let i = index; i < this.length - 1; i++) {
+      this.data[i] = this.data[i + 1];
+    }
+    delete this.data[this.length - 1];
+    this.length--;
+  }
 }
 
 
@@ -36,6 +52,8 @@ const newArray = new MyArray();
 newArray.push('hello');
 newArray.push('world');
 newArray.push('!');
-newArray.pop();
-newArray.pop();
+newArray.delete(1);
+newArray.push('this');
+newArray.push('cool');
+newArray.delete(1);
 console.log(newArray);
