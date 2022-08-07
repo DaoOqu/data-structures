@@ -31,10 +31,10 @@ class MyArray {
   }
 
   // This is the "delete" method that deletes an item from anywhere in the array
-  delete(index) {
+  deleteAtIndex(index) {
     const item = this.data[index];
     this.shiftItems(index);
-    return lastItem;
+    return item;
   }
 
   // This is the "shift" method that moves all items over to replace the index that was deleted
@@ -44,6 +44,15 @@ class MyArray {
     }
     delete this.data[this.length - 1];
     this.length--;
+  }
+
+  // This is the "unshift" method that adds an item to the beginning of the array
+  unShiftItems(item) {
+    this.length++;
+    for(let i = 0; i < this.length - 1; i++) {
+      this.data[i + 1] = this.data[i];
+    }
+    this.data[0] = item;
   }
 }
 
