@@ -57,12 +57,9 @@ class MyArray {
 }
 
 
+/*
+Try the class out  
+
 const newArray = new MyArray();
-newArray.push('hello');
-newArray.push('world');
-newArray.push('!');
-newArray.delete(1);
-newArray.push('this');
-newArray.push('cool');
-newArray.delete(1);
 console.log(newArray);
+*/
