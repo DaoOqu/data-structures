@@ -21,10 +21,21 @@ class MyArray {
     this.length++;
     return this.length;
   }
+
+  // This is the "pop" methods that removes an item from the end of the array
+  pop() {
+    const lastItem = this.data[this.length -1 ];
+    delete this.data[this.length - 1];
+    this.length--;
+    return lastItem;
+  }
 }
 
 
 const newArray = new MyArray();
 newArray.push('hello');
 newArray.push('world');
+newArray.push('!');
+newArray.pop();
+newArray.pop();
 console.log(newArray);
