@@ -42,4 +42,21 @@ In this implementation, we'll use arrays instead of objects but they work simila
     }
     return undefined;
   }
+
+  // This "keys" method allows us to iterate through all the keys of our hashmap with collision prevention
+  keys() {
+    if(!this.data.length) return undefined;
+
+    const keysArray = [];
+    for(let i = 0; i < this.data.length; i++) {
+      if(this.data[i] && this.data[i].length) {
+        if(this.data.length > 1) {
+          for(let j = 0; j < this.data[i].length; j++) {
+            keysArray.push(this.data[i][j][0]);
+          }
+        } else keysArray.push(this.data[i][0][0]);
+      }
+    }
+    return keysArray;
+  }
  }
