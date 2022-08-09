@@ -19,4 +19,13 @@ In this implementation, we'll use arrays instead of objects but they work simila
     }
     return hash;
   }
+
+  // This "set" method is used to store a key/value pair to the respective hashmap by creating a hash
+  set(key, value) {
+    let address = this._hash(key);
+    if(!this.data[address]) {
+      this.data[address] = [];
+    }
+    this.data[address].push([key, value]);
+  }
  }
