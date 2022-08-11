@@ -13,7 +13,7 @@ class LinkedList {
     this.length = 1;   
   }
 
-  // This "append" method takes a value that allows us to add on to current list
+  // This "append" method takes a value that allows us to add on to the end of the current list
   append(value) {
     const newNode = {
       value: value,
@@ -24,9 +24,22 @@ class LinkedList {
     this.length++;
     return this;
   }
+
+  // This "prepend" methos take a value that allows us to add on the to the beginning of the current list
+  prepend(value) {
+    const newNode = {
+      value: value,
+      next: null
+    };
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
 }
 
 // const myLinkedList = new LinkedList(10);
 // myLinkedList.append(5); 
 // myLinkedList.append(16); 
+// myLinkedList.prepend(1); 
 // console.log(myLinkedList);
