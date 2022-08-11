@@ -2,6 +2,13 @@
 Linked Lists in JavaScript, like most data structure, can be represented as an object where the nodes and their respective pointers inside are also represented using objects
 */
 
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
 class LinkedList {
   // This is the function that runs at the start to initialize a Linked List and its properties
   constructor(value) {
@@ -15,10 +22,7 @@ class LinkedList {
 
   // This "append" method takes a value that allows us to add on to the end of the current list
   append(value) {
-    const newNode = {
-      value: value,
-      next: null
-    };
+    const newNode = new Node(value);
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
@@ -27,10 +31,7 @@ class LinkedList {
 
   // This "prepend" methos take a value that allows us to add on the to the beginning of the current list
   prepend(value) {
-    const newNode = {
-      value: value,
-      next: null
-    };
+    const newNode = new Node(value);
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
