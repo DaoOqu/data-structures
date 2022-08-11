@@ -3,6 +3,7 @@ Linked Lists in JavaScript, like most data structure, can be represented as an o
 */
 
 class Node {
+  // This class/function runs within some linked list methods in order to better maintain readability and functionalitly
   constructor(value) {
     this.value = value;
     this.next = null;
