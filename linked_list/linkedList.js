@@ -38,6 +38,25 @@ class LinkedList {
     this.length++;
     return this;
   }
+
+  // This "insert" method takes an index and value and allows us to add a node in a specific place anywhere in the current list
+  insert(index, value) {
+
+  }
+
+
+
+  // this method was used for debugging purposes -> prints the list in an array format
+  printList() {
+    const array = [];
+    let currentNode = this.head;
+
+    while(currentNode !== null) {
+      array.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return array;
+  }
 }
 
 // const myLinkedList = new LinkedList(10);
