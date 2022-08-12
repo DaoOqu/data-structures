@@ -39,6 +39,18 @@ class LinkedList {
     return this;
   }
 
+  // this method was used for debugging purposes -> prints the list in an array format
+  printList() {
+    const array = [];
+    let currentNode = this.head;
+
+    while(currentNode !== null) {
+      array.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return array;
+  }
+
   // This "insert" method takes an index and value and allows us to add a node in a specific place anywhere in the current list
   insert(index, value) {
     if(index >= this.length) {
@@ -46,7 +58,13 @@ class LinkedList {
     }
 
     const newNode = new Node(value);
+
     const leader = this.traverseToIndex(index - 1)
+    const temp = leader.next;
+    leader.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return this.printList();
   }
 
   // This method handles the traversal to the index specified within some methods
@@ -60,22 +78,10 @@ class LinkedList {
     }
     return currentNode;
   }
-
-  // this method was used for debugging purposes -> prints the list in an array format
-  printList() {
-    const array = [];
-    let currentNode = this.head;
-
-    while(currentNode !== null) {
-      array.push(currentNode.value);
-      currentNode = currentNode.next;
-    }
-    return array;
-  }
 }
 
-// const myLinkedList = new LinkedList(10);
-// myLinkedList.append(5); 
-// myLinkedList.append(16); 
-// myLinkedList.prepend(1); 
-// console.log(myLinkedList);
+const myLinkedList = new LinkedList(10);
+myLinkedList.append(5); 
+myLinkedList.append(16); 
+myLinkedList.prepend(1);
+myLinkedList.insert(2, 99);
