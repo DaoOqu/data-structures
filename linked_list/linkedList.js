@@ -51,7 +51,14 @@ class LinkedList {
 
   // This method handles the traversal to the index specified within some methods
   traverseToIndex(index) {
+    let counter = 0;
+    let currentNode = this.head;
     
+    while(counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
   }
 
   // this method was used for debugging purposes -> prints the list in an array format
