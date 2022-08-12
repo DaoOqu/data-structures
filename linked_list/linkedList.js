@@ -41,10 +41,18 @@ class LinkedList {
 
   // This "insert" method takes an index and value and allows us to add a node in a specific place anywhere in the current list
   insert(index, value) {
+    if(index >= this.length) {
+       return this.append(value);
+    }
 
+    const newNode = new Node(value);
+    const leader = this.traverseToIndex(index - 1)
   }
 
-
+  // This method handles the traversal to the index specified within some methods
+  traverseToIndex(index) {
+    
+  }
 
   // this method was used for debugging purposes -> prints the list in an array format
   printList() {
