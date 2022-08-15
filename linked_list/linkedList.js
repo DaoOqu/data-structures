@@ -2,13 +2,13 @@
 Linked Lists in JavaScript, like most data structure, can be represented as an object where the nodes and their respective pointers inside are also represented using objects
 */
 
-class Node {
-  // This class/function runs within some linked list methods in order to better maintain readability and functionalitly
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
+// class Node {
+//   // This class/function runs within some linked list methods in order to better maintain readability and functionalitly
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
 
 class LinkedList {
   // This is the function that runs at the start to initialize a Linked List and its properties
@@ -23,7 +23,11 @@ class LinkedList {
 
   // This "append" method takes a value that allows us to add on to the end of the current list
   append(value) {
-    const newNode = new Node(value);
+    const newNode = {
+      value: value,
+      next: null
+    }
+
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
@@ -32,7 +36,11 @@ class LinkedList {
 
   // This "prepend" methos take a value that allows us to add on the to the beginning of the current list
   prepend(value) {
-    const newNode = new Node(value);
+    const newNode = {
+      value: value,
+      next: null
+    }
+
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
@@ -43,10 +51,9 @@ class LinkedList {
   printList() {
     const array = [];
     let currentNode = this.head;
-
     while(currentNode !== null) {
-      array.push(currentNode.value);
-      currentNode = currentNode.next;
+        array.push(currentNode.value);
+        currentNode = currentNode.next;
     }
     return array;
   }
@@ -57,9 +64,12 @@ class LinkedList {
        return this.append(value);
     }
 
-    const newNode = new Node(value);
+    const newNode = {
+      value: value,
+      next: null
+    }
 
-    const leader = this.traverseToIndex(index - 1)
+    const leader = this.traverseToIndex(index - 1);
     const temp = leader.next;
     leader.next = newNode;
     newNode.next = temp;
@@ -80,8 +90,10 @@ class LinkedList {
   }
 }
 
-const myLinkedList = new LinkedList(10);
-myLinkedList.append(5); 
-myLinkedList.append(16); 
+let myLinkedList = new LinkedList(10);
+myLinkedList.append(5);
+myLinkedList.append(16);
 myLinkedList.prepend(1);
+myLinkedList.printList();
 myLinkedList.insert(2, 99);
+// console.log(myLinkedList);
