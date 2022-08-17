@@ -61,18 +61,19 @@ class LinkedList {
   // This "insert" method takes an index and value and allows us to add a node in a specific place anywhere in the current list
   insert(index, value) {
     if(index >= this.length) {
-       return this.append(value);
+      console.log('yes');
+      return this.append(value);
     }
 
     const newNode = {
       value: value,
       next: null
-    }
+    };
 
     const leader = this.traverseToIndex(index - 1);
-    const temp = leader.next;
+    const holdingPointer = leader.next;
     leader.next = newNode;
-    newNode.next = temp;
+    newNode.next = holdingPointer;
     this.length++;
     return this.printList();
   }
@@ -88,12 +89,17 @@ class LinkedList {
     }
     return currentNode;
   }
+
+  // This "remove" method takes an index and allows us to remove a node from a specific index
+  remove(index) {
+    
+  }
 }
 
 let myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
-myLinkedList.printList();
 myLinkedList.insert(2, 99);
+myLinkedList.printList(); 
 // console.log(myLinkedList);
