@@ -92,7 +92,11 @@ class LinkedList {
 
   // This "remove" method takes an index and allows us to remove a node from a specific index
   remove(index) {
-    
+    const leader = this.traverseToIndex(index - 1);
+    const unwantedNode = leader.next;
+    leader.next = unwantedNode.next;
+    this.length--;
+    return this.printList();
   }
 }
 
@@ -101,5 +105,6 @@ myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
 myLinkedList.insert(2, 99);
-myLinkedList.printList(); 
+myLinkedList.printList();
+myLinkedList.remove(2); 
 // console.log(myLinkedList);
