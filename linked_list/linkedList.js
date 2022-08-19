@@ -103,7 +103,14 @@ class LinkedList {
 
   // This "reverse" method reverses the order of the respective linked list
   reverse() {
-    
+    if(!this.head.next) return this.head;
+
+    let first = this.head;
+    let second = first.next;
+    while(second) {
+      const temp = second.next;
+      // implement rest of reverse
+    }
   }
 }
 
