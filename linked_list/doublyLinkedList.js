@@ -13,7 +13,7 @@ of a singly linked list
 //   }
 // }
 
-class LinkedList {
+class DoublyLinkedList {
   // This is the function that runs at the start to initialize a Linked List and its properties
   constructor(value) {
     this.head = {
@@ -44,10 +44,12 @@ class LinkedList {
   prepend(value) {
     const newNode = {
       value: value,
-      next: null
+      next: null,
+      prev: null
     }
 
     newNode.next = this.head;
+    this.head.prev = newNode;
     this.head = newNode;
     this.length++;
     return this;
@@ -67,7 +69,6 @@ class LinkedList {
   // This "insert" method takes an index and value and allows us to add a node in a specific place anywhere in the current list
   insert(index, value) {
     if(index >= this.length) {
-      console.log('yes');
       return this.append(value);
     }
 
