@@ -1,5 +1,7 @@
 /*
 Linked Lists in JavaScript, like most data structure, can be represented as an object where the nodes and their respective pointers inside are also represented using objects
+
+This program represents a singly linked list
 */
 
 // class Node {
@@ -97,6 +99,11 @@ class LinkedList {
     leader.next = unwantedNode.next;
     this.length--;
     return this.printList();
+  }
+
+  // This "reverse" method reverses the order of the respective linked list
+  reverse() {
+    
   }
 }
 
