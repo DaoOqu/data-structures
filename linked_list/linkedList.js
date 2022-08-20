@@ -109,7 +109,9 @@ class LinkedList {
     let second = first.next;
     while(second) {
       const temp = second.next;
-      // implement rest of reverse
+      second.next = first;
+      first = second;
+      second = temp;
     }
   }
 }
