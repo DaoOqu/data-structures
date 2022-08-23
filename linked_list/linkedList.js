@@ -120,12 +120,3 @@ class LinkedList {
     return this;
   }
 }
-
-let myLinkedList = new LinkedList(10);
-myLinkedList.append(5);
-myLinkedList.append(16);
-myLinkedList.prepend(1);
-myLinkedList.insert(2, 99);
-myLinkedList.printList();
-myLinkedList.remove(2); 
-// console.log(myLinkedList);
