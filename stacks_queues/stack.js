@@ -24,6 +24,24 @@ class Stack {
   peek() {
     return this.top;
   }
+
+  // This "push" method allows us to add an item to the end of our respective stack
+  // We can implement this using a linked list
+  push(value) {
+    const newNode = new Node(value);
+    if(this.length = 0) {
+      this.top = newNode;
+      this.bottom = newNode;
+    } else {
+      const temp = this.top;
+      this.top = newNode;
+      this.top.next = temp;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 const myStack = new Stack();
+myStack.push('google');
+myStack.push('udemy');
