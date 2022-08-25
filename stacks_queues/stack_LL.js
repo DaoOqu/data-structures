@@ -13,7 +13,7 @@ class Node {
 }
 
 class Stack {
-  // This is the inital function that will be run to create the "array" and its two properties
+  // This is the inital function that will be run to create the "stack" and its two properties
   constructor() {
     this.top = null;
     this.bottom = null;
