@@ -5,13 +5,6 @@ Remeber, Stacks abide by the LIFO (last in, first out) rule
 
 */
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
-
 class Stack {
   // This is the inital function that will be run to create the "stack" and its two properties
   constructor() {
@@ -31,7 +24,8 @@ class Stack {
 
   // This "pop" method allows us to remove the item at the end of our respective stack
   pop() {
-  
+    this.array.pop();
+    return this;
   }
 }
 
