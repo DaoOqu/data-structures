@@ -1,6 +1,6 @@
 /*
 
-In this stack implementation, I will build a Stack data structure using both Arrays and Linked Lists
+In this stack implementation, I will build a Stack data structure using ONLY LINKED LISTS
 Remeber, Stacks abide by the LIFO (last in, first out) rule
 
 */
