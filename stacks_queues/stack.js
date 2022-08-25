@@ -40,6 +40,16 @@ class Stack {
     this.length++;
     return this;
   }
+
+  // This "pop" method allows us to remove the item at the end of our respective stack
+  pop() {
+    if(!this.top) return null;
+
+    // const temp = this.top; --> commented out in case we want to return the item that was removed
+    this.top = this.top.next;
+    this.length--;
+    return this;
+  }
 }
 
 const myStack = new Stack();
