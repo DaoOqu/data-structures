@@ -25,7 +25,8 @@ class Stack {
 
   // This "push" method allows us to add an item to the end of our respective stack
   push(value) {
-
+    this.array.push(value);
+    return this;
   }
 
   // This "pop" method allows us to remove the item at the end of our respective stack
