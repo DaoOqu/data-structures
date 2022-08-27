@@ -45,6 +45,10 @@ class Queue {
     if(this.first === this.last) {
       this.last = null;
     }
+    // const temp = this.first; --> holds the reference the item being removed if wanted
+    this.first = this.first.next;
+    this.length--;
+    return this;
   }
 }
 
