@@ -37,6 +37,15 @@ class Queue {
     this.length++;
     return this;
   }
+
+  // This method "dequeue" allows us to remove an item at the beginning of our queue
+  dequeue(value) {
+    if(!this.first) return null;
+
+    if(this.first === this.last) {
+      this.last = null;
+    }
+  }
 }
 
 const myQueue = new Queue();
