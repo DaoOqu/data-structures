@@ -15,7 +15,26 @@ class BinarySearchTree {
   constructor() {
     this.root = null;
   }
-
+  
+  // This "insert" method lets us insert a node within the tree
+  insert(value) {
+    const newNode = new Node(value);
+    
+    if(this.root === null) {
+      this.root = newNode;
+    } else {
+      let currentNode = this.root;
+      while(true) {
+        if(value < currentNode.value) {
+          // Left
+          if(!currentNode.left) {
+            currentNode.left = newNode;
+            return this;
+          }
+        }
+      }
+    }
+  }
 }
 
 const tree = new BinarySearchTree();
