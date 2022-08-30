@@ -26,11 +26,19 @@ class BinarySearchTree {
       let currentNode = this.root;
       while(true) {
         if(value < currentNode.value) {
-          // Left
+          // Left Side
           if(!currentNode.left) {
             currentNode.left = newNode;
             return this;
           }
+          currentNode = currentNode.left;
+        } else {
+          // Right Side
+          if(!currentNode.right) {
+            currentNode.right = newNode;
+            return this;
+          }
+          currentNode = currentNode.right;
         }
       }
     }
