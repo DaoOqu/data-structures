@@ -46,11 +46,11 @@ class BinarySearchTree {
 }
 
 const tree = new BinarySearchTree();
-
+JSON.stringify(traverse(tree.root));
 
 // This function helps test and display our BST
 function traverse(node) {
-  const tree = {value: node.value };
+  const tree = { value: node.value };
   tree.left = node.left === null ? null :
   traverse(node.left);
   tree.right = node.right === null ? null :
