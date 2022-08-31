@@ -44,9 +44,19 @@ class BinarySearchTree {
     }
   }
 
-  // This "lookup" method lets us search for a specific item with in our BST
+  // This "lookup" method lets us search for a specific item/node with in our BST
   lookup(value) {
-    
+    if(!this.root) return false;
+
+    let currentNode = this.root;
+    while(currentNode) {
+      if(value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if(value > currentNode.value) {
+        currentNode = currentNode.right;
+      } else return currentNode;
+    }
+    return false;
   }
 }
 
