@@ -43,6 +43,11 @@ class BinarySearchTree {
       }
     }
   }
+
+  // This "lookup" method lets us search for a specific item with in our BST
+  lookup(value) {
+    
+  }
 }
 
 const tree = new BinarySearchTree();
