@@ -58,6 +58,11 @@ class BinarySearchTree {
     }
     return false;
   }
+
+  // This "remove" method lets us remove a specific node from our BST
+  remove(value) {
+    
+  }
 }
 
 const tree = new BinarySearchTree();
