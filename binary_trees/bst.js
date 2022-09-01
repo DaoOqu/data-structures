@@ -66,16 +66,16 @@ class BinarySearchTree {
     let currentNode = this.root;
     let parentNode = null;
     while(currentNode) {
-      // Left Side
       if(value < currentNode.value) {
+      // Left Side
         parentNode = currentNode;
         currentNode = currentNode.left;
-      // Right Side
       } else if(value > currentNode.value) {
+      // Right Side
         parentNode = currentNode;
         currentNode = currentNode.right;
       } else if(currentNode.value === value) {
-        
+        // implement 3 possible options when you get a match
       }
     }
   }
