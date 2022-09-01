@@ -61,7 +61,23 @@ class BinarySearchTree {
 
   // This "remove" method lets us remove a specific node from our BST
   remove(value) {
-    
+    if(!this.root) return false;
+
+    let currentNode = this.root;
+    let parentNode = null;
+    while(currentNode) {
+      // Left Side
+      if(value < currentNode.value) {
+        parentNode = currentNode;
+        currentNode = currentNode.left;
+      // Right Side
+      } else if(value > currentNode.value) {
+        parentNode = currentNode;
+        currentNode = currentNode.right;
+      } else if(currentNode.value === value) {
+        
+      }
+    }
   }
 }
 
