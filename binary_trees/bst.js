@@ -77,7 +77,11 @@ class BinarySearchTree {
       } else if(currentNode.value === value) {
         // Option 1: No right child
         if(currentNode.right === null) {
-          
+          if(parentNode === null) {
+            this.root = currentNode.left;
+          } else {
+            
+          }
         }
       }
     }
