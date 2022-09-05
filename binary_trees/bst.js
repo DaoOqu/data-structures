@@ -106,7 +106,33 @@ class BinarySearchTree {
               parentNode.right = currentNode.right;
             }
           }
+
+          // Option 3: Right child that has a left child
+        } else {
+          // Find the right child's left most child
+          let leftmost = currentNode.right.left;
+          let leftmostParent = currentNode.right;
+          while(leftmost.left !== null) {
+            leftmostParent = leftmost;
+            leftmost = leftmost.left;
+          }
+
+          // Parent's left subtree is now leftmost's right subtree
+          leftmostParent.left = leftmost.right;
+          leftmost.left = currentNode.left;
+          leftmost.right = currentNode.right;
+
+          if(parentNode === null) {
+            this.root = leftmost;
+          } else {
+            if(currentNode.value < parentNode.value) {
+              parentNode.left = leftmost;
+            } else if(currentNode.value > parentNode.value) {
+              parentNode.right = leftmost;
+            }
+          }
         }
+        return true;
       }
     }
   }
