@@ -75,6 +75,8 @@ class BinarySearchTree {
         parentNode = currentNode;
         currentNode = currentNode.right;
       } else if(currentNode.value === value) {
+        // There is a match
+
         // Option 1: No right child
         if(currentNode.right === null) {
           if(parentNode === null) {
@@ -86,6 +88,22 @@ class BinarySearchTree {
             } else if(currentNode.value > parentNode.value) {
               // if parent < current value, make left child a right child of parent
               parentNode.right = currentNode.left;
+            }
+          }
+
+         // Option 2: Right child doesn't have a left child
+        } else if(currentNode.right.left === null) {
+          if(parentNode === null) {
+            this.root = currentNode.left;
+          } else {
+            currentNode.right.left = currentNode.left;
+            // if parent > current, make right child of the left the parent
+            if(currentNode.value < parentNode.value) {
+              parentNode.left = currentNode.right;
+
+            // if parent < current, make right child a right child of parent
+            } else if(currentNode.value > parentNode.value) {
+              parentNode.right = currentNode.right;
             }
           }
         }
